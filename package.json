@@ -1,0 +1,48 @@
+{
+  "name": "isbox",
+  "version": "1.0.2",
+  "description": "js各种类型判断工具/A type tool for javascript",
+  "main": "index.js",
+  "keywords": [
+    "is-Window",
+    "is-Number",
+    "is-Def",
+    "is-UnDef",
+    "is-Object",
+    "is-Empty",
+    "is-Date",
+    "is-Null",
+    "is-NullAndUnDef",
+    "is-NullOrUnDef",
+    "is-Promise",
+    "is-String",
+    "is-Function",
+    "is-Boolean",
+    "is-RegExp",
+    "is-Array",
+    "is-Window",
+    "is-Element",
+    "is-Server",
+    "is-Client",
+    "is-Url"
+  ],
+  "author": "Neo <neo@usd.dog>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethwillupto10000/isbox.git"
+  },
+  "homepage": "https://github.com/ethwillupto10000/isbox#README",
+  "license": "MIT",
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "bugs": {
+    "url": "https://github.com/ethwillupto10000/isbox/issues"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
