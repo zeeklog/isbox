@@ -1,33 +1,6 @@
-/**
- * A type tool for javascript.
- * include:
- * [
- *     "isWindow",
- *     "isNumber",
- *     "isDef",
- *     "isUnDef",
- *     "isObject",
- *     "isEmpty",
- *     "isDate",
- *     "isNull",
- *     "isNullAndUnDef",
- *     "isNullOrUnDef",
- *     "isPromise",
- *     "isString",
- *     "isFunction",
- *     "isBoolean",
- *     "isRegExp",
- *     "isArray",
- *     "isWindow",
- *     "isElement",
- *     "isServer",
- *     "isClient",
- *     "isUrl"
- *   ]
- * **/
 "use strict";
-exports.__esModule = true;
-exports.isUrl = exports.isClient = exports.isServer = exports.isElement = exports.isWindow = exports.isArray = exports.isRegExp = exports.isBoolean = exports.isFunction = exports.isString = exports.isPromise = exports.isNumber = exports.isNullOrUnDef = exports.isNullAndUnDef = exports.isNull = exports.isDate = exports.isEmpty = exports.isObject = exports.isUnDef = exports.isDef = exports.is = void 0;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isUrl = exports.isClient = exports.isServer = exports.isElement = exports.isWindow = exports.isArray = exports.isRegExp = exports.isBoolean = exports.isFunction = exports.isString = exports.isPromise = exports.isNumber = exports.isNullOrUnDef = exports.isNullAndUnDef = exports.isNull = exports.isDate = exports.isNotEmpty = exports.isEmpty = exports.isObject = exports.isUnDef = exports.isDef = exports.is = void 0;
 /* eslint-disable */
 var toString = Object.prototype.toString;
 function is(val, type) {
@@ -50,15 +23,27 @@ function isEmpty(val) {
     if (isString(val)) {
         return val.length === 0;
     }
+    // @ts-ignore
     if (val instanceof Map || val instanceof Set) {
+        // @ts-ignore
         return val.size === 0;
     }
+    // @ts-ignore
+    if (val && val.constructor === Array) {
+        // @ts-ignore
+        return val.length === 0;
+    }
     if (isObject(val)) {
+        // @ts-ignore
         return Object.keys(val).length === 0;
     }
     return isNullOrUnDef(val);
 }
 exports.isEmpty = isEmpty;
+function isNotEmpty(val) {
+    return !isEmpty(val);
+}
+exports.isNotEmpty = isNotEmpty;
 function isDate(val) {
     return is(val, 'Date');
 }
@@ -83,7 +68,7 @@ function isPromise(val) {
     return (is(val, 'Promise') &&
         isObject(val) &&
         isFunction(val.then) &&
-        isFunction(val["catch"]));
+        isFunction(val.catch));
 }
 exports.isPromise = isPromise;
 function isString(val) {
@@ -107,7 +92,6 @@ function isArray(val) {
 }
 exports.isArray = isArray;
 function isWindow(val) {
-    // in nodejs , window is undefined, but in broswer window is an obj.
     return typeof window !== 'undefined' && is(val, 'Window');
 }
 exports.isWindow = isWindow;
@@ -122,3 +106,4 @@ function isUrl(path) {
     return reg.test(path);
 }
 exports.isUrl = isUrl;
+//# sourceMappingURL=index.js.map

@@ -27,13 +27,20 @@ export function isEmpty<T = unknown>(val: T): val is T {
     // @ts-ignore
     return val.size === 0
   }
-
+  // @ts-ignore
+  if (val && val.constructor === Array) {
+    // @ts-ignore
+    return val.length === 0
+  }
   if (isObject(val)) {
     // @ts-ignore
     return Object.keys(val).length === 0
   }
-
   return isNullOrUnDef(val)
+}
+
+export function isNotEmpty(val: unknown) {
+  return !isEmpty(val)
 }
 
 export function isDate(val: unknown): val is Date {
