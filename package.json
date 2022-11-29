@@ -1,6 +1,6 @@
 {
-  "name": "isbox",
-  "version": "1.0.5",
+  "name": "typest",
+  "version": "1.0.7",
   "description": "js各种类型判断工具/A type tool for javascript",
   "main": "index.js",
   "keywords": [
@@ -26,21 +26,21 @@
     "isClient",
     "isUrl"
   ],
+  "scripts": {
+    "start": "node ./node_modules/commentcount/index.js ./ .js .ts"
+  },
   "author": "Neo <neo@usd.dog>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethwillupto10000/isbox.git"
+    "url": "git+https://github.com/ethwillupto10000/typest.git"
   },
-  "homepage": "https://github.com/ethwillupto10000/isbox#README",
+  "homepage": "https://github.com/ethwillupto10000/typest#README",
   "license": "MIT",
-  "scripts": {
-  },
   "dependencies": {
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "bugs": {
-    "url": "https://github.com/ethwillupto10000/isbox/issues"
+    "url": "https://github.com/ethwillupto10000/typest/issues"
   },
   "directories": {
     "lib": "lib"

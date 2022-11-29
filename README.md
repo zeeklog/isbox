@@ -1,10 +1,23 @@
-# 110 lines of condensed code.
-# 110行代码实现的超精简js类型判断工具
+# ✨ Light Javascript type tool: typest.
+# ✨ 超精简js类型判断工具 Typest
  - 本项目基于日常研发总结，部分较为优秀的实现来自于其他项目的源代码。
 
-# Function Inside
+# 🌟 Change log v1.0.5
+```markdown
+### ❤ NEW Feature:
+- ✔ Add isMobileNumber support.
+- ✔ Add `$Browser.isIeBrowser` support.
+- ✔ Add `$Browser.isWeixin` support.
+- ✔ Add `$Browser.isApple` support.
+- ✔ Add `$Browser.isAndroid` support.
+- 🐛 Fix some bugs
+
+```
+# 📖 Documentation
 ```javascript
 "is"
+"isMobileNumber" // +
+"$Browser" // +
 "isWindow"
 "isNumber"
 "isDef"
@@ -28,26 +41,35 @@
 "isUrl"
 ```
 
-# Usage
+## 🐉 Usage
 - Please use `npm/yarn` install this package
 ```shell
-npm i isbox --save
+npm i typest --save
 # or
-yarn i isbox --save
+yarn i typest --save
 ```
+#### Usage in Vue
+```javascript
+// in main.js：
+Vue.prototype.$type = require('typest');
+// use
+this.$type.is([], 'Array')
+// true
+```
+
 - `import` or `require` what you need
 ```javascript
 // in node.js
-const isbox = require('isbox')
-isbox.isWindow(window)
+const typest = require('typest')
+typest.isWindow(window)
 // false
-isbox.isWindow(null)
+typest.isWindow(null)
 // false
-isbox.isWindow('')
+typest.isWindow('')
 // false
 
 // in frontend
-import { isWindow } from 'isbox'
+import { isWindow } from 'typest'
 
 isWindow(window)
 // true
@@ -63,7 +85,7 @@ isWindow('')
 - 方法一： 基本数据类型判断，基于构造类名判断
 
 ```javascript
-import { is } from 'isbox'
+import { is } from 'typest'
 
 is(123, 'Number')
 // true
@@ -98,12 +120,12 @@ console.log(new Set().constructor === Set)
 ```javascript
 // 在Nodeh环境执行
 // execute in Node env
-console.log(isbox.isServer)
+console.log(typest.isServer)
 // true
 
 // 在浏览器环境执行
 // execute in Broswer env
-console.log(isbox.isServer)
+console.log(typest.isServer)
 // false
 
 ```
@@ -115,12 +137,12 @@ console.log(isbox.isServer)
 ```javascript
 // 在Nodeh环境执行
 // execute in Node env
-console.log(isbox.isClient)
+console.log(typest.isClient)
 // false
 
 // 在浏览器环境执行
 // execute in Broswer env
-console.log(isbox.isClient)
+console.log(typest.isClient)
 // true
 
 ```
@@ -128,17 +150,17 @@ console.log(isbox.isClient)
 ## "isNumber"
 ```javascript
 // in node.js
-const isbox = require('isbox')
-isbox.isNumber(NaN)
+const typest = require('typest')
+typest.isNumber(NaN)
 // true
-isbox.isNumber(123)
+typest.isNumber(123)
 // true
-isbox.isNumber(null)
+typest.isNumber(null)
 // false
-isbox.isNumber('')
+typest.isNumber('')
 // false
 
-import { isNumber } from 'isbox'
+import { isNumber } from 'typest'
 
 isNumber(123)
 // true
@@ -149,7 +171,7 @@ isNumber('')
 ```
 ## "isObject"
 ```javascript
-import { isObject } from 'isbox'
+import { isObject } from 'typest'
 
 isObject(123)
 // false
@@ -162,7 +184,7 @@ isObject('')
 ```
 ## "isEmpty"
 ```javascript
-import { isEmpty } from 'isbox'
+import { isEmpty } from 'typest'
 
 isEmpty(123)
 // false
